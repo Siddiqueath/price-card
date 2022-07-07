@@ -1,38 +1,78 @@
-.App {
-  text-align: center;
+body {
+  background: linear-gradient(90deg, #001fff, #17c0e8 50%);
+  height: 100%;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.deck {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  justify-content: space-around;
+  margin: 10px 50px;
+  flex-wrap: wrap;
+}
+.card {
+  background-color: aliceblue;
+  padding: 20px 40px 30px 40px;
+  margin-top: 100px;
+  border-radius: 20px;
+  transition: 0.4s;
+}
+.card:hover {
+  margin-top: 90px;
+  margin-bottom: 10px;
+}
+
+.title {
+  text-align: center;
+  color: grey;
+}
+.price {
+  margin: 0px;
+  font-size: 40px;
+  padding-top: 0px;
+  text-align: center;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid gainsboro;
+}
+.month {
+  font-size: small;
+}
+ul {
+  padding: 0px;
+}
+li {
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 18.7px 0px;
+  list-style-type: none;
+}
+.card:nth-child(1) li:nth-child(8),
+.card:nth-child(1) li:nth-child(7),
+.card:nth-child(1) li:nth-child(6),
+.card:nth-child(1) li:nth-child(5),
+.card:nth-child(2) li:nth-child(8) {
+  color: gray;
+}
+
+.btn {
+  background-color: skyblue;
+  font-size: larger;
+  width: 100%;
+  height: 60px;
+  border-radius: 50px;
+  opacity: 0.8;
+  font-weight: bold;
   color: white;
+  cursor: pointer;
 }
-
-.App-link {
-  color: #61dafb;
+.btn:hover {
+  opacity: 1;
+  background-color: #012cfd;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.btn:active {
+  font-size: 20px;
+  background-color: #17c0e8;
+}
+@media screen and (max-width: 600px) {
+  .card {
+    min-width: 100%;
   }
 }
