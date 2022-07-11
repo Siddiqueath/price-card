@@ -1,4 +1,7 @@
-import "./App.css";
+import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+
 export default function App() {
   const cards = [
     {
@@ -39,34 +42,39 @@ export default function App() {
     }
   ];
   return (
-    <div className="deck">
-      {cards.map((item, index) => (
-        <Deck card={item} key={index} />
-      ))}
+    <div className='container my-2 px-3 py-4 bg-primary'>
+      <div className='row'>
+        {cards.map((item, index) => (
+          <Deck card={item} key={index} />
+        ))}
+      </div>
     </div>
   );
 }
-//continue fromremoving div
+
 function Deck({ card }) {
   return (
-    <div className="card">
-      <h4 className="title">{card.name}</h4>
-      <h5 className="price">
-        {card.price}
-        <span className="month">/month</span>
-      </h5>
-
-      <ul>
-        <li>{card.user}</li>
-        <li>{card.storage}</li>
-        <li>{card.publics}</li>
-        <li>{card.access}</li>
-        <li>{card.privates}</li>
-        <li>{card.support}</li>
-        <li>{card.subdomain}</li>
-        <li>{card.report}</li>
-      </ul>
-      <button className="btn">Button</button>
+    <div className='col col-12 col-md-6 col-lg-4'>
+      <div className='card mx-auto my-4 mx-lg-3'>
+        <div className='card-body'>
+          <h6 class="card-title bg-warning px-3 py-1 text-center text-muted">{card.name}</h6>
+          <h5 className="card-price my-3 text-center">{card.price} <span>/month</span></h5>
+          <hr></hr>
+          
+          <ul className='list-unstyled ms-3 mt-4'>
+            <li className='mb-3'>{card.user}</li>
+            <li className='mb-3'>{card.storage}</li>
+            <li className='mb-3'>{card.publics}</li>
+            <li className='mb-3'>{card.access}</li>
+            <li className='mb-3'>{card.privates}</li>
+            <li className='mb-3'>{card.support}</li>
+            <li className='mb-3'>{card.subdomain}</li>
+            <li className='mb-3'>{card.report}</li>
+          </ul>
+          
+          <button type='button' className='btn w-100 py-2 btn-lg btn-primary rounded-pill'>Button</button>
+        </div>
+      </div>
     </div>
   );
 }
